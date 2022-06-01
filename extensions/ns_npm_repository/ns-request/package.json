@@ -1,0 +1,15 @@
+{
+    "name": "ns-request",
+    "version": "1.0.0",
+    "description": "HTTP Requests using promises",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest --config ns-request.jest.config.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "jest": "26.6.3",
+        "node-mocks": "file:../node-mocks"
+    }
+}

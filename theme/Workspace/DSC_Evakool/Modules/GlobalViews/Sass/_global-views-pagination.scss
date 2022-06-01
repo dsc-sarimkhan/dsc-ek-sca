@@ -1,0 +1,64 @@
+.global-views-pagination {
+	float: right;	
+}
+
+.global-views-pagination-next-icon{
+	@extend .icon-angle-right;
+}
+
+.global-views-pagination-prev-icon{
+	@extend .icon-angle-left;
+}
+
+.global-views-pagination-links{
+	@extend .pagination-links;
+}
+
+.global-views-pagination-prev{
+	@extend .pagination-prev;
+}
+
+.global-views-pagination-prev-disabled{
+	@extend .pagination-prev-disabled;
+}
+
+.global-views-pagination-disabled{
+	@extend .pagination-disabled;
+}
+
+.global-views-pagination-links-number{
+	@extend .pagination-links-number;
+}
+
+li.global-views-pagination-links-number a.global-views-pagination-active {
+    background-color: #0066b9;
+    color: #fff;
+}
+li.global-views-pagination-links-number a {
+    color: #0066b9;
+}
+
+.global-views-pagination-active{
+	@extend .pagination-active;
+}
+
+.global-views-pagination-next-disabled{
+	@extend .pagination-next-disabled;
+}
+
+.global-views-pagination-next{
+	@extend .pagination-next;
+}
+
+.global-views-pagination-count{
+	@extend .pagination-count;
+}
+
+//DSC customization
+.global-views-pagination{
+	color:  $sc-header-link-text-color;
+	a, i{
+		color:  $sc-header-link-text-color;
+	}
+}
+

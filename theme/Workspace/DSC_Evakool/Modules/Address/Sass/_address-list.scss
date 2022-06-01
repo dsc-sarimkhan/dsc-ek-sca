@@ -1,0 +1,28 @@
+.address-list {
+    @extend .address-edit;
+    //DSC customization
+    .address-details-container{
+        color: $sc-top-menu-link-text-color;
+        a, h2, h3, label, p, i, small, span, button{
+            color: $sc-top-menu-link-text-color;
+        }
+    }//end
+}
+.address-list-default-addresses,
+.address-list-other-addresses {
+    .backbone-collection-view-row {
+		margin-bottom: $sc-margin-lv4;
+	}
+}
+.address-list-button-container {
+    margin: 0 0 $sc-margin-lv6 0;
+}
+.address-list-button-info-cards-new {
+    @extend .button-info-cards-new
+}
+.address-list-button-back {
+    @extend .button-back;
+}
+.address-list-button-back-icon {
+    @extend .button-back-icon;
+}

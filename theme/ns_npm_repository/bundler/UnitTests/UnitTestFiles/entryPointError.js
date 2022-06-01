@@ -1,0 +1,1 @@
+define('EntryPointError', ['NotExistingDependency'], function() {});

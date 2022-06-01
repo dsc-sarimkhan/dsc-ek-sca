@@ -1,0 +1,8 @@
+{
+    "gulp": {
+        "javascript": [
+            "handlebars.runtime-v4.5.3.js"
+        ]
+    },
+    "jshint": "false"
+}

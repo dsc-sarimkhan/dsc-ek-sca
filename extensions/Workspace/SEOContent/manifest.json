@@ -1,0 +1,69 @@
+{
+    "name": "SEOContent",
+    "fantasyName": "Add SEO Content on Category",
+    "vendor": "DSC",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=20.1.0",
+        "SCS": ">=20.1.0"
+    },
+    "description": "This extension will add additional content for SEO on category page.",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/DisplayContent.Service.ss"
+            ]
+        }
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/DisplayContent/Sass/_seocontent-displaycontent.scss"
+        },
+        "files": [
+            "Modules/DisplayContent/Sass/_seocontent-displaycontent.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/DisplayContent/Templates/dsc_seocontent_displaycontent.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/DisplayContent/JavaScript/DSC.SEOContent.DisplayContent.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/DisplayContent/JavaScript/DSC.SEOContent.DisplayContent.js",
+                    "Modules/DisplayContent/JavaScript/DisplayContent.View.js",
+                    "Modules/DisplayContent/JavaScript/DSC.SEOContent.DisplayContent.Model.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/DisplayContent/SuiteScript/DSC.SEOContent.DisplayContent.js",
+        "files": [
+            "Modules/DisplayContent/SuiteScript/DSC.SEOContent.DisplayContent.js",
+            "Modules/DisplayContent/SuiteScript/DisplayContent.ServiceController.js"
+        ]
+    },
+    "local_folder": "Workspace\\SEOContent",
+    "suitescript2": {
+        "files": []
+    }
+}

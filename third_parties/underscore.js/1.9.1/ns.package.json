@@ -1,0 +1,14 @@
+{
+    "gulp": {
+        "javascript": [
+            "underscore.js"
+        ],
+        "ssp-libraries": [
+            "underscore.js"
+        ],
+        "suitescript2": [
+            "underscore.js"
+        ]
+    },
+    "jshint": "false"
+}

@@ -1,0 +1,10 @@
+{
+    "gulp": {
+        "javascript": [
+            "JavaScript/String.format.ts"
+        ],
+        "ssp-libraries": [
+            "JavaScript/String.format.backend.js"
+        ]
+    }
+}

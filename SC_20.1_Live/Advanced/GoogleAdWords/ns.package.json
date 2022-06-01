@@ -1,0 +1,11 @@
+{
+    "gulp": {
+        "javascript": [
+            "JavaScript/*",
+            "JavaScipt/*.ts"
+        ],
+        "configuration": [
+            "Configuration/*.json"
+        ]
+    }
+}

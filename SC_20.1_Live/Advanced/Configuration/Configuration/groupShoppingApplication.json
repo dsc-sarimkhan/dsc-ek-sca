@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "group": {
+        "id": "shoppingApplication",
+        "title": "Shopping",
+        "description": "Shopping Application configuration",
+        "showIfNoneWebsiteScope":["SUITE_COMMERCE_MY_ACCOUNT"]
+    }
+}

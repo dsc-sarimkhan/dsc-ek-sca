@@ -1,0 +1,47 @@
+<%/*
+	© 2020 NetSuite Inc.
+	User may not copy, modify, distribute, or re-bundle or otherwise make available this code;
+	provided, however, if you are an authorized user with a NetSuite account or log-in, you
+	may use this code subject to the terms that govern your access and use.
+*/%><%
+var Configuration = require('Configuration')
+,	Utils = require('Utils')
+,   _ = require('underscore')
+,	SiteSettings = require('SiteSettings.Model');
+
+response.setCDNCacheable(response.CACHE_DURATION_SHORT);
+response.setContentType('JAVASCRIPT');
+
+if (Configuration.get().categories) { %>
+	SC.CATEGORIES = <%= JSON.stringify(require('Categories.Model').getCategoryTree(Configuration.get().categories.menuLevel, null, null, null, false, true)) %>;
+<% } %>
+
+<%
+// The use of CDS and CMS are mutually exclusive, if you use CMS you can't use CDS, or if you use CDS you can't use CMS
+if (Configuration.get().cms.useCMS)
+{
+	try
+	{
+		var baseUrl = Utils.trim(Configuration.get().cms.baseUrl || '') || request.getURL().match(/(^https?:\/\/[^\/]+)/i)[0];
+		var CMSadapterModel = require('CMSadapter.Model');
+        var CMS = CMSadapterModel.getPages(baseUrl);
+	%>
+		SC.ENVIRONMENT.CMS = <%= JSON.stringify(CMS || {}) %>;
+	<% }
+	catch(e)
+	{
+		console.warn('CMS could not be loaded, reason: ' + JSON.stringify(e));
+	}
+} %>
+
+<%
+try
+{
+	var PageTypeModel = require('PageType.Model'); %>
+	SC.ENVIRONMENT.PageTypes = <%= JSON.stringify(PageTypeModel.getPageTypes() || []) %>;
+<%}
+catch(e)
+{
+	console.warn('CMS PageType error: ' + JSON.stringify(e));
+}
+%>

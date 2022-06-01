@@ -1,0 +1,1 @@
+define('EntryPointPath', ['DependencyPath'], function() {});

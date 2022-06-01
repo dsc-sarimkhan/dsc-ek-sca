@@ -1,0 +1,17 @@
+{
+    "name": "ns-server",
+    "version": "1.0.0",
+    "description": "NS server",
+    "scripts": {
+        "test": "jest --config ns-server.jest.config.js ns-serverTest.js",
+        "debug": "node --inspect node_modules/jest/bin/jest --config ns-server.jest.config.js ns-serverTest.js --runInBand"
+    },
+    "main": "index.js",
+    "author": "",
+    "dependencies": {},
+    "devDependencies": {
+        "jest": "26.6.3",
+        "jest-junit": "12.0.0",
+        "ts-jest": "26.5.5"
+    }
+}

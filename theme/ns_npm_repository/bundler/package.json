@@ -1,0 +1,24 @@
+{
+  "name": "bundler",
+  "version": "1.0.0",
+  "description": "NS bundler",
+  "scripts": {
+    "test": "jest --config bundler.jest.config.js bundlerTest.ts",
+    "postinstall": "tsc"
+  },
+  "main": "dist/index.js",
+  "author": "",
+  "dependencies": {
+    "typescript": "3.5.1",
+    "through2": "3.0.1",
+    "vinyl": "2.2.0"
+  },
+  "devDependencies": {
+    "gulp": "4.0.2",
+    "map-stream": "file:../map-stream",
+    "jest": "25.5.1",
+    "jest-junit": "6.4.0",
+    "ts-jest": "25.2.1",
+    "@types/jest": "25.1.2"
+  }
+}

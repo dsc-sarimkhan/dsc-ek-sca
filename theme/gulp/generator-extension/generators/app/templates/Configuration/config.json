@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": { 
+        "<%= exampleKey %>": {
+            "group": "extensions",
+            "subtab": "<%= exampleSubtab %>",
+            "type": "string",
+            "title": "<%= exampleTitle %>",
+            "description": "Config description example",
+            "default": "Default config example"
+        }
+    }
+}

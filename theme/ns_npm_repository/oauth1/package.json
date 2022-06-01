@@ -1,0 +1,19 @@
+{
+    "name": "oauth1",
+    "version": "1.0.0",
+    "description": "NS TBA authorization",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest --config oauth1.jest.config.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "4.17.1"
+    },
+    "devDependencies": {
+        "jest": "25.5.1",
+        "jest-junit": "6.4.0",
+        "node-mocks": "file:../node-mocks"
+    }
+}

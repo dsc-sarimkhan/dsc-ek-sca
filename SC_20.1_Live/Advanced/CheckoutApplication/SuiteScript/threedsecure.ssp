@@ -1,0 +1,123 @@
+<%/*
+	© 2020 NetSuite Inc.
+	User may not copy, modify, distribute, or re-bundle or otherwise make available this code;
+	provided, however, if you are an authorized user with a NetSuite account or log-in, you
+	may use this code subject to the terms that govern your access and use.
+*/%><%
+    var SecurityHeaders = require('SecurityHeaders');
+    SecurityHeaders.addSecurityHeaders(response);
+
+	var confirmation, order_info;
+
+	Application = require('Application');
+	LiveOrderModel = require('LiveOrder.Model');
+	CardHolderAuthenticationModel = require('CardHolderAuthentication.Model');
+	CardHolderAuthenticationUtils = require('CardHolderAuthentication.Utils');
+	ModelsInit = require('SC.Models.Init');
+
+	try
+	{
+		order_info = {};
+
+		response.setCDNCacheable(response.CACHE_DURATION_UNIQUE);
+
+		const cardHolderAuthenticationRecordId = ModelsInit.context.getSessionObject('cardHolderAuthenticationRecordId');
+
+		if (cardHolderAuthenticationRecordId)
+		{
+			var cardHolderAuthenticationRecord = CardHolderAuthenticationModel.searchById(cardHolderAuthenticationRecordId);
+			const cardHolderAuthenticationRecordStatus = cardHolderAuthenticationRecord.getValue('status');
+		}
+
+		if (!cardHolderAuthenticationRecordId || cardHolderAuthenticationRecordStatus === 'AUTHENTICATED')
+		{
+			ModelsInit.context.setSessionObject('cardHolderAuthenticationRecordId', null);
+
+			// Submit the order
+			confirmation = LiveOrderModel.submit(true);
+		}
+		else
+		{
+			if (cardHolderAuthenticationRecordStatus === 'WAITING_FOR_DEVICE_AUTHENTICATION')
+			{
+				CardHolderAuthenticationModel.setStatus(cardHolderAuthenticationRecordId, 'RETURN_FROM_DEVICE_AUTHENTICATION');
+
+				var returnedParameters = '{"' + this.request.body.replace(/ /g, '", "').replace(/=/g, '": "') + '"}';
+				CardHolderAuthenticationModel.loadAndSubmitWithReturnedParameters(cardHolderAuthenticationRecordId, 'AUTHENTICATE_DEVICE', returnedParameters);
+
+				cardHolderAuthenticationRecord = CardHolderAuthenticationModel.searchById(cardHolderAuthenticationRecordId);
+
+				const challengeShopperFormURL = ModelsInit.session.getAbsoluteUrl2(
+                                            'checkout',
+                                            CardHolderAuthenticationUtils.getUrl(
+                                                '',
+                                                'challengeShopperForm',
+                                                cardHolderAuthenticationRecord.getValue(
+                                                    'challengeshopperformaction'
+                                                ),
+                                                cardHolderAuthenticationRecord.getValue('challengeshopperformid'),
+                                                CardHolderAuthenticationModel.searchChallengeShopperInputFields(
+                                                    cardHolderAuthenticationRecordId
+                                                )
+                                            )
+                                        );
+    			confirmation =
+				{
+					statuscode: "error",
+					reasoncode: "ERR_WS_REQ_SHOPPER_CHALLENGE",
+					cardholderauthenticationid: cardHolderAuthenticationRecord.id,
+					authenticationformaction: challengeShopperFormURL
+				}
+			}
+			else if (cardHolderAuthenticationRecordStatus === 'WAITING_FOR_SHOPPER_CHALLENGE')
+			{
+				CardHolderAuthenticationModel.setStatus(cardHolderAuthenticationRecord.id, 'RETURN_FROM_SHOPPER_CHALLENGE');
+
+				var returnedParameters = '{"' + this.request.body.replace(/ /g, '", "').replace(/=/g, '": "') + '"}';
+				CardHolderAuthenticationModel.loadAndSubmitWithReturnedParameters(cardHolderAuthenticationRecord.id, 'SHOPPER_CHALLENGE', returnedParameters);
+
+				cardHolderAuthenticationRecord = CardHolderAuthenticationModel.searchById(cardHolderAuthenticationRecordId);
+				if (cardHolderAuthenticationRecord.getValue('status') === 'AUTHENTICATED')
+				{
+					ModelsInit.context.setSessionObject('cardHolderAuthenticationRecordId', null);
+
+					// Submit the order
+					confirmation = LiveOrderModel.submit(true);
+				}
+				else
+				{
+					throw "An error has occurred"
+				}
+			}
+			else
+			{
+				throw "An error has occurred"
+			}
+		}
+	}
+	catch(e)
+	{
+		order_info =
+		{
+			errorMessage: e
+		};
+
+		ModelsInit.context.setSessionObject('cardHolderAuthenticationRecordId', null);
+		confirmation = Application.processError(e);
+	}
+
+	// Set the confirmation
+	order_info.confirmation = confirmation;
+%>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>3D Secure Authentication</title>
+</head>
+<body>
+<script type="text/javascript">
+	parent.process3DSecure(<%= JSON.stringify(order_info) %>);
+</script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<HTML>
+
+    <Head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+    
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style>
+            /* .inputreq{
+                    form-control
+                } */
+            /* input {
+                  width: 100%;
+                  background-color: firebrick;
+                } */
+            .input-border {
+                border: solid 1px;
+                border-color: #0066b9;
+    
+            }
+    
+            BODY {
+                /* background-color: #0066b9;
+                    color: white; */
+                background-color: white;
+                color: black;
+            }
+    
+            label {
+                font-weight: bold;
+            }
+    
+            #staric {
+                /* color: maroon; */
+                font-size: 20px;
+            }
+    
+            /* #startdate_helper_calendar {
+                        color: #ffff;
+                        display: none;
+                    } */
+            #subjecttitle {
+                display: none;
+            }
+    
+            .btn-primary {
+                color: #ffff;
+                background-color: #0066b9;
+                border-color: #ffff;
+                /*set the color you want here*/
+            }
+    
+            .btn-primary:hover,
+            .btn-primary:focus,
+            .btn-primary:active {
+                color: #0066b9;
+                background-color: #fff;
+                border-color: #0066b9;
+                /*set the color you want here*/
+            }
+    
+            .form-control {
+                border: 0;
+            }
+        </style>
+        <title>Sales Contact Form</title>
+    </Head>
+    
+    <Body>
+    
+        <div class="container">
+            <NLFORM>
+                <table>
+                    <div class="row ">
+                        <div class="col-sm-12 text-center">
+    
+                            <div valign="bottom" height="55">
+                                <p>
+                                    <NSLOGO>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+    
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row input-group">
+                                <div class="col-sm-9">
+                                    <label>First Name: <span id="staric">*</span></label>
+                                </div>
+                            </div>
+                            <div class="row input-group">
+                                <div class="col-sm-9">
+                                    <div class="input-border">
+                                        <NLFIRSTNAME>
+                                    </div>
+    
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-sm-6">
+                            <div class="row input-group">
+                                <div class="col-sm-9">
+                                    <label>Last Name: <span id="staric">*</span></label>
+                                </div>
+                            </div>
+                            <div class="row input-group">
+                                <div class="col-sm-9">
+                                    <div class="input-border">
+                                        <NLLASTNAME>
+                                    </div>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row input-group">
+                                <div class="col-sm-9">
+                                    <label>Email: <span id="staric">*</span></label>
+                                </div>
+                            </div>
+                            <div class="row input-group">
+                                <div class="col-sm-9">
+                                    <div class="input-border">
+                                        <NLEMAIL>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+    
+                            <div class="row input-group">
+                                <div class="col-sm-9">
+                                    <label>Phone: <span id="staric">*</span></label>
+                                </div>
+                            </div>
+                            <div class="row input-group">
+                                <div class="col-sm-9">
+                                    <div class="input-border">
+                                        <NLPHONE>
+                                    </div>
+                                </div>
+                            </div>
+    
+    
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+    
+                        <div class="col-sm-6">
+                            <div class="row input-group">
+                                <div class="col-sm-9">
+                                    <label>Enquiry: <span id="staric">*</span></label>
+                                </div>
+                            </div>
+                            <div class="row input-group">
+                                <div class="col-sm-9">
+                                    <div class="input-border">
+                                        <!-- <NLCOMMENTS> -->
+                                        <NLINCOMINGMESSAGE>
+                                    </div>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                    <div id="subjecttitle" style="display: none;">
+                        <div class="row input-group">
+                            <div class="col-sm-9">
+                                <label>Subject: </label>
+                            </div>
+                        </div>
+                        <div class="row input-group">
+                            <div class="col-sm-9">
+                                <NLTITLE>
+                            </div>
+                        </div>
+    
+                    </div>
+                    <div id="casetype" style="display:none">
+                        <div class="row input-group">
+                            <div class="col-sm-9">
+                                <label>Type: </label>
+                            </div>
+                        </div>
+                        <div class="row input-group">
+                            <div class="col-sm-9">
+                                <NLCATEGORY>
+                            </div>
+                        </div>
+    
+                    </div>
+                    <div style="display: none;">
+                        <NLSUBSIDIARY>
+    
+                    </div>
+                    <br>
+                    </br>
+                    <button type="submit" value="Submit" class="btn btn-primary" id="submitbtn"
+                        disabled="disabled">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="reset" value="Cancel" class="btn btn-primary" onclick="buttonDisable();">Reset</button>
+                </table>
+                </form>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/usm/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+        </script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+            $("input").addClass("form-control");
+            $("select").addClass("form-control");
+            $("textarea").addClass("form-control");
+            //////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////
+            function buttonDisable() {
+                $('#submitbtn').attr('disabled', 'disabled');
+            }
+    
+            $("#title").val("Sales Contact");
+            ///////////Submit form///////////////////
+            $('FORM').on('submit', function () {
+                var firstname = $('#firstname').val();
+                var lastname = $('#lastname').val();
+                $("#title").val("Sales Contact - " + firstname + " " + lastname);
+                $("#category").val("4");
+            });
+            ///////////////////////Form Validation//////////////////////////            
+            (function () {
+                $('#firstname,#lastname,#email,#phone,#incomingmessage').keyup(function () {
+    
+                    var empty = false;
+                    if (($('#firstname').val() != '') && ($('#lastname').val() != '') && ($('#email').val() !=
+                            '') && ($('#phone').val() != '') && ($('#incomingmessage').val() != '')) {
+                        empty = false
+                    } else {
+                        empty = true;
+                    }
+                    if (empty) {
+                        $('#submitbtn').attr('disabled', 'disabled');
+                    } else {
+                        $('#submitbtn').removeAttr('disabled');
+                    }
+                });
+            })()
+            //    if($("input").val != ""){
+    
+            //    }
+        </script>
+    </Body>
+    
+    </HTML>

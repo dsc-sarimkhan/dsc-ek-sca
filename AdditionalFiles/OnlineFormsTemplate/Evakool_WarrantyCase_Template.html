@@ -1,0 +1,371 @@
+<HTML>
+
+<Head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        /* .inputreq{
+            form-control
+        } */
+        /* input {
+          width: 100%;
+          background-color: firebrick;
+        } */
+        .input-border {
+            border: solid 1px;
+            border-color: #0066b9;
+
+        }
+
+        BODY {
+            /* background-color: #0066b9;
+                color: white; */
+            background-color: white;
+            color: black;
+        }
+
+        .staric {
+            /* color: maroon; */
+            font-size: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        /* #startdate_helper_calendar {
+                color: #ffff;
+                display: none;
+            } */
+        #subjecttitle {
+            display: none;
+        }
+
+        .btn-primary {
+            color: #ffff;
+            background-color: #0066b9;
+            border-color: #ffff;
+            /*set the color you want here*/
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus,
+        .btn-primary:active {
+            color: #0066b9;
+            background-color: #fff;
+            border-color: #0066b9;
+            /*set the color you want here*/
+        }
+        .form-control {
+            border: 0;
+        }
+    </style>
+    <title>Warranty Card Registration</title>
+</Head>
+
+<Body>
+
+    <div class="container">
+        <NLFORM>
+            <table>
+                <div class="row ">
+                    <div class="col-sm-12 text-center">
+
+                        <div valign="bottom" height="55">
+                            <p>
+                                <NSLOGO>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="row input-group">
+                            <div class="col-sm-9">
+                                <label>First Name: <span class="staric">*</span></label>
+                            </div>
+                        </div>
+                        <div class="row input-group">
+                            <div class="col-sm-9">
+                                <div class="input-border">
+                                    <NLFIRSTNAME>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row input-group">
+                            <div class="col-sm-9">
+                                <label>Last Name: <span class="staric">*</span></label>
+                            </div>
+                        </div>
+                        <div class="row input-group">
+                            <div class="col-sm-9">
+                                <div class="input-border">
+                                    <NLLASTNAME>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-6">
+
+                        <div id="subjecttitle">
+                            <div class="row input-group ">
+                                <div class="col-sm-9">
+                                    <label>Subject: <span class="staric">*</span></label>
+                                </div>
+                            </div>
+                            <div class="row input-group ">
+                                <div class="col-sm-9">
+                                    <NLTITLE>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row input-group">
+                            <div class="col-sm-9">
+                                <label>Phone: <span class="staric">*</span></label>
+                            </div>
+                        </div>
+                        <div class="row input-group">
+                            <div class="col-sm-9">
+                                <div class="input-border">
+                                    <NLPHONE>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="col-sm-6">
+
+
+                        <div class="row input-group">
+                            <div class="col-sm-9">
+                                <label>Email: <span class="staric">*</span></label>
+                            </div>
+                        </div>
+                        <div class="row input-group">
+                            <div class="col-sm-9">
+                                <div class="input-border">
+                                    <NLEMAIL>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="row input-group">
+                            <div class="col-sm-9">
+                                <label>Item: <span class="staric">*</span></label>
+                            </div>
+                        </div>
+                        <div class="row input-group">
+                            <div class="col-sm-9">
+                                <div class="input-border">
+                                    <NLITEM>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row input-group">
+                            <div class="col-sm-9">
+                                <label>Serial Number: <span class="staric">*</span></label>
+                            </div>
+                        </div>
+                        <div class="row input-group">
+                            <div class="col-sm-9">
+                                <div class="input-border"> <input type="text" style="font-size: 8pt;" id="serialnumber1"
+                                        name="serialnumber1" /></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row" id="Itemrow" style="display: none;">
+                    <div class="col-sm-6">
+                        <div class="row input-group">
+                            <div class="col-sm-9">
+                                <label>Other Item Name: <span class="staric">*</span></label>
+                            </div>
+                        </div>
+                        <div class="row input-group">
+                            <div class="col-sm-9">
+                                <div class="input-border"> <input type="text" style="font-size: 8pt;" id="itemName"
+                                        name="itemname" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+
+
+                <br>
+                <div class="row">
+                    <div class="col-sm-6">
+
+                        <div class="row input-group">
+                            <div class="col-sm-9">
+                                <label>Upload Proof of Purchase: <span class="staric">*</span></label>
+                            </div>
+                        </div>
+                        <div class="row input-group">
+                            <div class="col-sm-9">
+                                <div class="input-border">
+                                    <NLFILE>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row input-group">
+                            <div class="col-sm-9">
+                                <label>Description of Fault: <span class="staric">*</span></label>
+                            </div>
+                        </div>
+                        <div class="row input-group">
+                            <div class="col-sm-9">
+                                <div class="input-border">
+                                    <NLINCOMINGMESSAGE>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <br>
+                <div id="casetype" style="display:none">
+                    <div class="row input-group">
+                        <div class="col-sm-9">
+                            <label>Type: </label>
+                        </div>
+                    </div>
+                    <div class="row input-group">
+                        <div class="col-sm-9">
+                            <NLCATEGORY>
+                        </div>
+                    </div>
+
+                </div>
+                <div style="display: none;">
+                    <NLSUBSIDIARY>
+
+                </div>
+                </br>
+                <button type="submit" value="Submit" id="submitbtn" class="btn btn-primary"
+                    disabled="disabled">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="reset" value="Cancel" class="btn btn-primary">Reset</button>
+            </table>
+            </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/usm/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $("input").addClass("form-control");
+        $("select").addClass("form-control");
+        $("textarea").addClass("form-control");
+        $("#title").val("Warranty-Claim-null");
+        $('#item').append('<option value= "' + 121 + '"> Others </option>');
+
+        //////////////////////////////On submit//////////////////////////////////
+        $('FORM').on('submit', function () {
+
+            var value = $('#serialnumber1').val();
+            var firstname = $('#firstname').val();
+            var lastname = $('#lastname').val();
+            var msg = $('#incomingmessage').val();
+            var itemval = $('#item option:selected').val();
+            var item = $("#item option:selected").html();
+            $("#category").val("6");
+            if (itemval == 121) {
+                item = $('#itemName').val();  
+                $('#item').prop('disabled', true);
+            } else {
+                // item = $('#item option:selected').html();
+                $('#item').prop('disabled', false);
+            }
+            $('#incomingmessage').val('Item :' + item + '\n' + 'Serial Number :' + value + '\n' + msg);
+            if (firstname && lastname) {
+                $("#title").val("Contact Warranty - "+ firstname + " " + lastname);
+            } else {
+
+                return false;
+            }
+
+
+        });
+
+
+        /////////////////////////Item Field Append///////////////////////////////////           
+        $('#item').on('change', function () {
+            if ($(this).val() == 121) {
+                $('#Itemrow').css('display', 'block');
+            } else {
+
+                $('#Itemrow').css('display', 'none');
+            }
+        });
+        //////////////////////////Form Validation////////////////////////////////
+        (function () {
+            $('#firstname,#lastname,#email,#phone,#item,input[type="file"],#itemName ,#serialnumber1,#incomingmessage')
+                .bind('change keyup', function () {
+                    var empty = false;
+                    if (($('#firstname').val() != '') && ($('#lastname').val() != '') && ($('#email').val() !=
+                            '') && ($('#phone').val() != '') && ($('#item option:selected').val() != '') && ($(
+                            'input[type="file"]').val() != '') && ($('#serialnumber1').val() != '') && ($(
+                            '#incomingmessage').val() != '')) {
+                        console.log("validated");
+                        if (($('#item option:selected').val() == 121)) {
+                            console.log("Item Other")
+                            if ($('#itemName').val() != '') {
+                                empty = false
+                            } else {
+                                empty = true;
+                            }
+                        } else {
+                            empty = false
+                        }
+
+                    } else {
+                        empty = true;
+                    }
+                    if (empty) {
+                        $('#submitbtn').attr('disabled', 'disabled');
+                    } else {
+                        $('#submitbtn').removeAttr('disabled');
+                    }
+                });
+        })()
+    </script>
+</Body>
+
+</HTML>

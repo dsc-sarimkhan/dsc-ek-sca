@@ -1,0 +1,32 @@
+{
+	"type": "object",
+    "subtab": {
+        "id": "structureddatamarkup",
+        "title": "Structured Data Markup",
+        "docRef": "section_158023294475",
+        "description": "Structured Data Markup",
+        "group": "catalog"
+    }
+    ,
+    "properties": {
+    	"structureddatamarkup.type": {
+            "group": "catalog",
+            "subtab": "structureddatamarkup",
+            "type": "string",
+            "title": "MARKUP TYPE",
+            "description": "Select the JSON-LD option to add the script tag containing JSON-LD schema information to the html head section. This option affects the markup for all items.",
+            "enum": ["No Markup", "JSON-LD"],
+            "default": "No Markup"
+        }
+        ,
+        "structureddatamarkup.availabilityonbackorder": {
+            "group": "catalog",
+            "subtab": "structureddatamarkup",
+            "type": "string",
+            "title": "OUT OF STOCK BEHAVIOR (WHEN ITEM BACK ORDERS ARE ALLOWED)",
+            "description": "Select one of these availability options to define how out of stock items are handled when back orders are allowed. This option affects the markup for all items.",
+            "enum": ["PreOrder", "InStock"],
+            "default": "PreOrder"
+        }
+    }
+}

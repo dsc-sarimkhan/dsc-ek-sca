@@ -1,0 +1,14 @@
+{
+    "gulp": {
+        "javascript": [
+            "JavaScript/*.js",
+            "JavaScript/*.ts"
+        ],
+        "javascript-ext": [
+            "JavaScriptExt/BackwardCompatibilityAMDUnclean.js"
+        ],
+        "javascript-almond-fix": [
+            "JavaScriptExt/LoadTemplateSafe.js"
+        ]
+    }
+}

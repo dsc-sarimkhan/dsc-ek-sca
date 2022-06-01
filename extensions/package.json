@@ -1,0 +1,48 @@
+{
+    "name": "sc-extension-devtools",
+    "version": "2021.2.0",
+    "description": "SuiteCommerce Development Tools to develop new themes or extensions",
+    "main": "index.js",
+    "scripts": {
+        "test": "node gulp/spec",
+        "postinstall": "npm i -g gulp-cli"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "archiver": "4.0.1",
+        "generator-extension": "file:./gulp/generator-extension",
+        "glob": "7.1.4",
+        "gulp": "4.0.2",
+        "files-concat": "file:./ns_npm_repository/files-concat",
+        "handlebars-compile": "file:./ns_npm_repository/handlebars-compile",
+        "bundler": "file:./ns_npm_repository/bundler",
+        "gulp-sass": "4.1.0",
+        "gulp-sourcemaps": "2.6.5",
+        "handlebars": "4.5.3",
+        "inquirer": "7.1.0",
+        "map-stream": "file:./ns_npm_repository/map-stream",
+        "gulp-file": "file:./ns_npm_repository/gulp-file",
+        "ns-mime": "file:./ns_npm_repository/ns-mime",
+        "ns-uploader": "file:./ns_npm_repository/ns-uploader",
+        "oauth1": "file:./ns_npm_repository/oauth1",
+        "ns-logs": "file:./ns_npm_repository/ns-logs",
+        "ns-async": "file:./ns_npm_repository/ns-async",
+        "ns-progress-bar": "file:./ns_npm_repository/ns-progress-bar",
+        "ns-server": "file:./ns_npm_repository/ns-server",
+        "ns-request": "file:./ns_npm_repository/ns-request",
+        "module-loader": "file:./ns_npm_repository/module-loader",
+        "semver": "6.1.1",
+        "suitetalk": "file:./ns_npm_repository/suitetalk4node",
+        "through": "file:./ns_npm_repository/through",
+        "through2": "3.0.1",
+        "underscore": "1.10.2",
+        "xml2js": "0.4.23",
+        "ns-args": "file:./ns_npm_repository/ns-args",
+        "yeoman-environment": "2.6.0"
+    },
+    "devDependencies": {
+        "@types/node": "12.0.8"
+    }
+}

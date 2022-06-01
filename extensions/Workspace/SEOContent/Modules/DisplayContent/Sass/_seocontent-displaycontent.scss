@@ -1,0 +1,21 @@
+.seocontent-info-card {
+	@extend .info-card;
+  }
+  
+  .seocontent-info-card-content {
+	@extend .info-card-content;
+	color: black;
+  }
+  .facets-faceted-navigation-facet-group-expander {
+	display: block;
+	padding: $sc-padding-lv2 0;
+  }
+  .facets-faceted-navigation-item-category-facet-group-expander-icon {
+	padding: $sc-padding-lv1;
+  }
+  .seocontent-info-card-content li {
+	list-style-type: disc;
+  }
+  #dsc-content {
+	padding-bottom: 5%;
+  }

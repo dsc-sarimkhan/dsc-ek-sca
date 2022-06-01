@@ -1,0 +1,10 @@
+{
+  "name": "ns-logs",
+  "version": "1.0.0",
+  "description": "NS logs",
+  "main": "index.js",
+  "author": "",
+  "dependencies": {
+      "ansi-colors": "4.0.1"
+  }
+}

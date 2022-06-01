@@ -1,0 +1,10 @@
+{
+    "gulp": {
+        "templates": [
+            "Templates/*"
+        ]
+    },
+    "overrides": {
+        "suitecommerce/Facets@sclite-sclite/Templates/facets_facet_browse.tpl": "Templates/my_facets_facet_browse.tpl"
+    }
+}

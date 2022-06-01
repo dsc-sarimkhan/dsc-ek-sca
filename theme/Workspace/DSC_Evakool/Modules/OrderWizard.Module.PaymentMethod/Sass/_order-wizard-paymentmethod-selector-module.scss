@@ -1,0 +1,40 @@
+.order-wizard-paymentmethod-selector-module {
+	@extend .box-column;
+
+	.creditcard-edit-form {
+	  clear: both;
+	}
+	.creditcard-edit-form-securitycode {
+		padding: 0;
+	}
+}
+
+.order-wizard-paymentmethod-selector-module-header {
+	margin-bottom: $sc-margin-lv3;
+	color: $sc-color-theme-700;
+}
+
+.order-wizard-paymentmethod-selector-module-header-nav {
+	margin-bottom: $sc-margin-lv4;
+	position:relative;
+}
+
+.order-wizard-paymentmethod-selector-module-button-group {
+	@extend .pill-button-group;
+}
+
+.order-wizard-paymentmethod-selector-module-button {
+	@extend .button-medium;
+	@extend .pill-button;
+	border:	1px solid $sc-header-link-text-color;
+	color: $sc-top-menu-link-text-color; //DSC customization
+}
+
+.order-wizard-paymentmethod-selector-module-button.selected {
+	@extend .button-secondary;
+	@extend .pill-button-active;
+	background-color: $sc-header-link-text-color;
+	border-radius: 0px;
+	border:2px solid $sc-header-link-text-color;
+    color: $sc-top-menu-link-text-color;
+}

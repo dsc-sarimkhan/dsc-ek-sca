@@ -1,0 +1,25 @@
+<%/*
+	© 2020 NetSuite Inc.
+	User may not copy, modify, distribute, or re-bundle or otherwise make available this code;
+	provided, however, if you are an authorized user with a NetSuite account or log-in, you
+	may use this code subject to the terms that govern your access and use.
+*/%><%
+    var SecurityHeaders = require('SecurityHeaders');
+    SecurityHeaders.addSecurityHeaders(response);
+    var _ = require('underscore');
+%>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>3-D Secure Verification</title>
+</head>
+<body OnLoad="document.challengeShopperForm.submit();">
+<form name="challengeShopperForm" method="POST" action="<%= this.request.getParameter('action') %>" id="<%= this.request.getParameter('form') %>">
+    <% var data = JSON.parse(this.request.getParameter('data'));
+       _.each(data, function(input){ %>
+   	    <input type="hidden" name="<%=input.name%>" value="<%=input.value%>" />
+    <% }) %>
+</form>
+</body>
+</html>

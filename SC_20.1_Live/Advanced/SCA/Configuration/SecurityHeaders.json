@@ -1,0 +1,35 @@
+{
+    "type": "object",
+    "subtab": {
+        "id": "security",
+        "title": "Security",
+        "description": "Configure Security",
+        "group": "advancedSettings"
+    },
+
+    "properties": {
+        "security.allowFraming": {
+            "group": "advancedSettings",
+            "subtab": "security",
+            "type": "string",
+            "title": "Allow Site to be Framed",
+            "description": "Set who can frame your site.\nDISALLOW FRAMING: Site is only allowed to be framed by itself\nALLOW FRAMING: Site is allowed to be framed by anyone\nALLOW FRAMING CUSTOM: Site is allowed to be framed by \"Allow Site to be Framed By\" list",
+            "enum": ["DISALLOW FRAMING", "ALLOW FRAMING", "ALLOW FRAMING CUSTOM"],
+            "default": "DISALLOW FRAMING"
+        },
+        "security.allowFramingBy": {
+            "group": "advancedSettings",
+            "subtab": "security",
+            "type": "array",
+            "title": "Allow Site to be Framed By",
+            "description": "Set the list of origins that can frame your site when using \"ALLOW FRAMING CUSTOM\"\nIf scheme is not provided, https is assumed for X-Frame-Options header",
+            "items": {
+                "type": "string",
+                "title": "Origin"
+            },
+            "default": [
+                "SAMEORIGIN"
+            ]
+        }
+    }
+}

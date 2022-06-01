@@ -1,0 +1,14 @@
+{
+    "name": "ns-mime",
+    "version": "1.0.0",
+    "description": "NS mime types",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest --config ns-mime.jest.config.js ns-mimeTest.js"
+    },
+    "author": "",
+    "devDependencies": {
+        "jest": "26.6.3",
+        "jest-junit": "12.0.0"
+    }
+}

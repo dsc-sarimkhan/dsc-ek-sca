@@ -1,0 +1,55 @@
+{
+	"type": "object",
+    "subtab": {
+        "id": "subscriptions",
+        "title": "Subscriptions",
+        "docRef": "chapter_156079542004",
+        "description": "Here you will find useful configuration for subscriptions",
+        "group": "myAccountApp",
+        "showIfAllFeatures":["SUBSCRIPTIONBILLING","ADVSUBSCRIPTIONBILLING"]
+    }
+,	"properties": {
+		"subscriptions.lineStatusChange": {
+			"group": "myAccountApp"
+		,	"subtab": "subscriptions"
+		,	"type": "string"
+		,	"title": "Subscription Line Status Change"
+		,	"description": "Select one of these status change options to define what the website user is allowed to change for a subscription line item."
+		,	"enum": ["Allow Suspending / Resuming", "Allow Cancellations", "Don't Allow Status Changes"]
+		,	"default": "Allow Suspending / Resuming"
+		}
+	,	"subscriptions.allowToCancelSuspendRequiredLines": {
+			"group": "myAccountApp"
+		,	"subtab": "subscriptions"
+		,	"type": "boolean"
+		,	"title": "Allow the user to cancel / suspend required lines"
+		,	"description": "Check this box if you want to allow the website user to cancel/suspend required subscription lines."
+		,	"default": false
+		}
+	,	"subscriptions.generalStatusChange": {
+			"group": "myAccountApp"
+		,	"subtab": "subscriptions"
+		,	"type": "string"
+		,	"title": "Subscription General Status Change"
+		,	"description": "Select one of these status change options to define what the website user is allowed to change for a subscription. This option affects the entire subscription."
+		,	"enum": ["Allow Suspending / Resuming", "Allow Cancellations", "Don't Allow Status Changes"]
+		,	"default": "Allow Suspending / Resuming"
+		}
+	,	"subscriptions.disallowUpgradeQuantity": {
+			"group": "myAccountApp"
+		,	"subtab": "subscriptions"
+		,	"type": "boolean"
+		,	"title": "Disallow the user to upgrade quantity"
+		,	"description": "Check this box if you do not want the website user to be able to increase the quantity of a subscription line."
+		,	"default": false
+		}
+	,	"subscriptions.disallowDowngradeQuantity": {
+			"group": "myAccountApp"
+		,	"subtab": "subscriptions"
+		,	"type": "boolean"
+		,	"title": "Disallow the user to downgrade quantity"
+		,	"description": "Check this box if you do not want the website user to be able to decrease the quantity of a subscription line."
+		,	"default": false
+		}
+	}
+}

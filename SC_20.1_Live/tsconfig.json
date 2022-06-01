@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "checkJs": true,
+        "experimentalDecorators": true,
+        "baseUrl": "./node_modules/",
+        "paths": {
+            "N": ["@hitc/netsuite-types/N"],
+            "N/*": ["@hitc/netsuite-types/N/*"],
+            "*.tpl": ["./Commons/Utilities/JavaScript/template.d.ts"]
+        },
+        "types": [
+            "jest"
+        ]
+    },
+    "exclude": [
+        "node_modules",
+        "**/node_modules/*",
+        "**/SuiteScript/*"
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "gulp": {
+        "javascript": [
+            "bignumber.js"
+        ],
+        "ssp-libraries": [
+            "bignumber.js"
+        ],
+        "suitescript2": [
+            "bignumber.js"
+        ]
+    },
+    "jshint": "false"
+}

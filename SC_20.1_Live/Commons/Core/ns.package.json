@@ -1,0 +1,16 @@
+{
+	"gulp": {
+		"javascript": [
+			"JavaScript/**/*.ts"
+		]
+	,	"templates": [
+			"Templates/*"
+		]
+	,	"unit-test-files": [
+			"Tests/*.js"
+		]
+	,	"unit-test-entry-point": [
+			"Tests/UnitTest.Address.js"
+		]
+	}
+}

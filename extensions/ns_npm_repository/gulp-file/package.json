@@ -1,0 +1,15 @@
+{
+    "name": "gulp-file",
+    "version": "1.0.0",
+    "description": "NS gulp-file",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "through2": "3.0.1",
+        "vinyl": "2.2.0"
+    }
+}

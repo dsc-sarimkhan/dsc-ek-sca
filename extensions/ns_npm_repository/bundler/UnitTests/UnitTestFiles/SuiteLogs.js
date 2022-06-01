@@ -1,0 +1,1 @@
+define('SuiteLogs', [], function() {});

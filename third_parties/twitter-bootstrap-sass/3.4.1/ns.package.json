@@ -1,0 +1,8 @@
+{
+    "gulp": {
+        "javascript": [
+            "assets/javascripts/bootstrap.js"
+        ]
+    },
+    "jshint": "false"
+}

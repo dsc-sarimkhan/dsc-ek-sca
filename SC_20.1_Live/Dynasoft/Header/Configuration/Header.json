@@ -1,0 +1,36 @@
+{
+	"type": "object",
+    "subtab": {
+        "id": "header",
+        "title": "Header",
+        "description": "Header related settings",
+        "docRef": "bridgehead_4393268747",
+        "group": "layout"
+    }
+,	"properties": {
+		"header.notShowCurrencySelector": {
+			"group": "layout",
+			"subtab": "header"
+		,	"type": "boolean"
+		,	"title": "Hide Currency Selector"
+		,	"description": "Check this box to hide the currency selector in the application."
+		,	"default": false
+		}
+	,	"header.logoUrl": {
+			"group": "layout",
+			"subtab": "header"
+		,	"type": "string"
+		,	"title": "Logo URL"
+		,	"description": "Enter the URL location of the logo image file that is displayed at the top of the application."
+		,	"default": ""
+		}
+    ,	"header.showRecognizedShopper": {
+			"group": "layout",
+			"subtab": "header",
+			"type": "boolean",
+			"title": "Show Recognized Shopper",
+			"description": "Check this box to show the recognized shopper when the session times out.",
+			"default": false
+		}
+	}
+}

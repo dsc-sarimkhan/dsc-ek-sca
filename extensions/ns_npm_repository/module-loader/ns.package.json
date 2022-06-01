@@ -1,0 +1,10 @@
+{
+    "gulp": {
+        "javascript": [
+            "module-loader.js"
+        ],
+        "ssp-libraries": [
+            "module-loader.js"
+        ]
+    }
+}

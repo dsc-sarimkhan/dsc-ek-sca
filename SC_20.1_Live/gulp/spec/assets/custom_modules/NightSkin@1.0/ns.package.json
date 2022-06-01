@@ -1,0 +1,6 @@
+{
+    "gulp": {},
+    "overrides": {
+        "suitecommerce/BaseSassStyles@1.2.0/Sass/atoms/_sticky-button.scss": "Sass/_sticky-button.scss"
+    }
+}

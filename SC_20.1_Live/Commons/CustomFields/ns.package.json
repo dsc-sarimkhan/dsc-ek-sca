@@ -1,0 +1,20 @@
+{
+	"gulp": {
+		"javascript": [
+			"JavaScript/*.js",
+			"JavaScript/*.ts"
+		]
+	,	"templates": [
+			"Templates/*"
+		]
+	,	"ssp-libraries": [
+			"SuiteScript/*.js"
+		]
+	,	"configuration": [
+			"Configuration/*.json"
+		]	
+	,	"ssp-files": {		
+			"SuiteScript/customFieldsMetadata.ssp": "customFieldsMetadata.ssp"		
+		}
+	}
+}

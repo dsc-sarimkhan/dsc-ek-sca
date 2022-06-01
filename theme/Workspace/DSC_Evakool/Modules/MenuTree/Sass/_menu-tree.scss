@@ -1,0 +1,12 @@
+.menu-tree{
+	margin-bottom: $sc-margin-lv4;
+}
+
+.dsc-menu-tree{
+	.menu-tree-node a{
+		color: $sc-header-link-text-color;
+	}
+	.menu-tree-node-submenu a{
+		color: $sc-top-menu-link-text-color;
+	}
+}

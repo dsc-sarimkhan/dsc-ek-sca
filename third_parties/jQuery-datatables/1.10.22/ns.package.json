@@ -1,0 +1,8 @@
+{
+    "gulp": {
+        "javascript": [
+			"jquery.datatables.js"
+        ]
+    },
+    "jshint": "false"
+}
